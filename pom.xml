@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>heroku-test-app-1</groupId>
-	<artifactId>heroku-test-app-1</artifactId>
+	<groupId>com.hrsoftwares</groupId>
+	<artifactId>hrsoftwares-heroku-test-app-1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
@@ -53,4 +53,24 @@
 			<version>${spring.version}</version>
 		</dependency>
 	</dependencies>
+	<build>
+	<plugins>
+	<plugin>
+    <groupId>com.heroku.sdk</groupId>
+    <artifactId>heroku-maven-plugin</artifactId>
+    <version>1.1.1</version>
+    <configuration>
+        <jdkVersion>1.8</jdkVersion>
+        <!-- Use your own application name -->
+        <appName>hrsoftwares-heroku-test-app-1</appName> 
+        <processTypes>
+            <!-- Tell Heroku how to launch your application -->
+            <!-- You might have to remove the ./ in front   -->
+            <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
+        </processTypes>
+    </configuration>
+</plugin>
+	</plugins>
+	</build>
+	
 </project>
