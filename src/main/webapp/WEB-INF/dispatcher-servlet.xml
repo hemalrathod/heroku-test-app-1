@@ -20,11 +20,7 @@ http://www.springframework.org/schema/mvc
 			<value>.jsp</value>
 		</property>
 	</bean>
-	<bean
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
-		id="multipartResolver">
-		<property name="maxUploadSize" value="5000000" />
-	</bean>
+	
 	<mvc:resources mapping="/resources/**" location="/resources/"
 		cache-period="31556926" />
 </beans>
